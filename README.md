@@ -47,6 +47,19 @@ Tags `ai0man/fest-backend:1.0.0` and `ai0man/fest-backend:1.0` (built with `APP_
 
 `compose.yaml` runs the backend from `ai0man/fest-backend:1.0.0` pulled from Docker Hub instead of building it.
 
+## Signing (cosign 3.1.3)
+
+- Key pair made with `cosign generate-key-pair` (password protected). Only `cosign.pub` is committed; `*.key` is in `.gitignore`.
+- `1.0.0` is signed by digest:
+  `cosign sign --key cosign.key ai0man/fest-backend@sha256:3765959447de1dd3b711cb04e0af9781e11818974364d5d33ccf6e972ce0ddb3`
+- `cosign verify --key cosign.pub ai0man/fest-backend@sha256:3765…ddb3` passes.
+- `1.0.1` (digest `sha256:e1d62b547f77bb7cb8a58e9e96940c49d13ec24e79d416c983a5905bdd69f010`) was pushed **unsigned**;
+  `cosign verify --key cosign.pub ai0man/fest-backend:1.0.1` fails with `no signatures found` (exit code 10).
+
+## Steps not completed
+
+- None.
+
 ## AI tools used
 
 - Claude Code (Claude Opus 5.5): wrote the Dockerfiles, `compose.yaml` and README, ran and explained the Trivy results,
