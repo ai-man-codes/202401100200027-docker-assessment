@@ -2,7 +2,7 @@
 
 | Item | Value |
 |------|-------|
-| Name | _<your name>_ |
+| Name | Aiman Singh |
 | REGNO | 202401100200027 |
 | PORT | 8027 |
 | Docker Hub username | ai0man |
