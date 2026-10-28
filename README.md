@@ -39,6 +39,14 @@ Fixes in 0.2:
 
 Full reports: [`reports/trivy-before.txt`](reports/trivy-before.txt), [`reports/trivy-after.txt`](reports/trivy-after.txt).
 
+## Release on Docker Hub
+
+Tags `ai0man/fest-backend:1.0.0` and `ai0man/fest-backend:1.0` (built with `APP_VERSION=1.0.0`).
+
+**1.0.0 digest:** `sha256:3765959447de1dd3b711cb04e0af9781e11818974364d5d33ccf6e972ce0ddb3`
+
+`compose.yaml` runs the backend from `ai0man/fest-backend:1.0.0` pulled from Docker Hub instead of building it.
+
 ## AI tools used
 
 - Claude Code (Claude Opus 5.5): wrote the Dockerfiles, `compose.yaml` and README, ran and explained the Trivy results,

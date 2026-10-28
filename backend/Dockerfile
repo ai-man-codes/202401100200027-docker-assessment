@@ -13,6 +13,10 @@ RUN pip install --no-cache-dir -r requirements.txt \
 
 COPY app.py .
 
+# Release version shown by /api/health, set with --build-arg APP_VERSION=x.y.z
+ARG APP_VERSION=dev
+ENV APP_VERSION=${APP_VERSION}
+
 # Run as an unprivileged user instead of root
 RUN addgroup -S -g 10001 app \
     && adduser -S -D -H -u 10001 -G app app

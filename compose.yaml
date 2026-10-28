@@ -16,7 +16,7 @@ services:
       - data
 
   backend:
-    build: ./backend
+    image: ai0man/fest-backend:1.0.0
     environment:
       DB_HOST: db
       DB_NAME: festpass
